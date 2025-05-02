@@ -7,6 +7,7 @@ import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { useSharedState } from '../../context/SharedContext';
 import { AnimatedView } from '../tamaguicore/AnimatedView';
+import { BottomTabHeight } from '../../constants/Constants';
 
 const CustomBottomTab: FC<BottomTabBarProps> = ({
     state,
@@ -33,7 +34,7 @@ const CustomBottomTab: FC<BottomTabBarProps> = ({
         <>
             <AnimatedView
                 width={screenWidth}
-                height={56}
+                height={BottomTabHeight}
                 backgroundColor={'$white'}
                 elevationAndroid={1}
                 borderBottomWidth={1}

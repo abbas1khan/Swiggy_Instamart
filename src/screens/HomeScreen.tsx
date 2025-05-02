@@ -12,7 +12,8 @@ import { withTiming } from 'react-native-reanimated';
 import { useFocusEffect } from '@react-navigation/native';
 
 const HomeScreen = () => {
-    const { scrollY, scrollYGlobal } = useSharedState();
+    const { scrollY, scrollYGlobal, scrollToTop, flatlistRef } =
+        useSharedState();
     const prevScrollY = useRef(0);
 
     const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -27,7 +28,7 @@ const HomeScreen = () => {
         useCallback(() => {
             return () => {
                 setTimeout(() => {
-                    scrollY.value = withTiming(0);
+                    scrollToTop();
                 }, 0);
             };
         }, []),
@@ -38,6 +39,7 @@ const HomeScreen = () => {
             <View flex={1} justifyContent="flex-end" alignItems="center">
                 {/* @ts-ignore */}
                 <FlatList
+                    ref={flatlistRef}
                     onScroll={onScroll}
                     ListHeaderComponent={() => {
                         return (
@@ -50,6 +52,7 @@ const HomeScreen = () => {
                             </>
                         );
                     }}
+                    ListFooterComponent={ListFooterComponent}
                 />
             </View>
         </ScreenWrapper>
@@ -57,3 +60,7 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
+
+const ListFooterComponent = () => {
+    return <LiveItUp />;
+};

@@ -2,10 +2,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import ReorderScreen from '../screens/ReorderScreen';
 import CustomBottomTab from '../components/bottomtab/CustomBottomTab';
+import { useSharedState } from '../context/SharedContext';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
+    const { flatlistRef } = useSharedState();
+
+    const scrollToTop = (isFocused: boolean) => {
+        if (isFocused) {
+            flatlistRef?.current?.scrollToOffset({
+                offset: 0,
+                animated: true,
+            });
+        }
+    };
+
     return (
         <Tab.Navigator
             screenOptions={{
@@ -17,6 +29,9 @@ const BottomTabNavigator = () => {
                 name="HomeScreen"
                 component={HomeScreen}
                 options={{ tabBarLabel: 'Home' }}
+                listeners={({ navigation }) => ({
+                    tabPress: () => scrollToTop(navigation.isFocused()),
+                })}
             />
             <Tab.Screen
                 name="ReorderScreen"

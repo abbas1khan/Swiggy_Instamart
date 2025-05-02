@@ -4,10 +4,11 @@ import Text from '../components/tamaguicore/Text';
 import ScreenWrapper from '../layout/ScreenWrapper';
 import Button from '../components/common/Button';
 import { Image } from 'react-native';
+import { BottomTabHeight } from '../constants/Constants';
 
 const ReorderScreen = () => {
     return (
-        <ScreenWrapper>
+        <ScreenWrapper translucent>
             <View
                 flex={1}
                 justifyContent="center"
@@ -22,6 +23,7 @@ const ReorderScreen = () => {
                         height: 164,
                         resizeMode: 'contain',
                         marginBottom: 50,
+                        marginTop: -BottomTabHeight,
                     }}
                 />
                 <Text fontSize={20} fontFamily={'$extraBold'} color={'$black2'}>
@@ -34,6 +36,7 @@ const ReorderScreen = () => {
                     textAlign="center"
                     marginTop={8}
                     marginBottom={24}
+                    letterSpacing={-0.2}
                 >
                     Buy more items to see all your past items here for easy
                     reordering
