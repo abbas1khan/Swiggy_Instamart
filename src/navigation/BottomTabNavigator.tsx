@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import ReorderScreen from '../screens/ReorderScreen';
+import HomeScreen from '../screens/homescreen/HomeScreen';
+import ReorderScreen from '../screens/reorderscreen/ReorderScreen';
 import CustomBottomTab from '../components/bottomtab/CustomBottomTab';
 import { useSharedState } from '../context/SharedContext';
 

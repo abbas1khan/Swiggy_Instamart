@@ -1,35 +1,29 @@
 import { View } from '@tamagui/core';
 import React, { useCallback, useRef } from 'react';
-import ScreenWrapper from '../layout/ScreenWrapper';
-import LiveItUp from '../components/common/LiveItUp';
-import {
-    FlatList,
-    NativeScrollEvent,
-    NativeSyntheticEvent,
-} from 'react-native';
-import { useSharedState } from '../context/SharedContext';
-import { withTiming } from 'react-native-reanimated';
+import ScreenWrapper from '../../layout/ScreenWrapper';
+import LiveItUp from '../../components/common/LiveItUp';
+import { FlatList } from 'react-native';
+import { useSharedState } from '../../context/SharedContext';
 import { useFocusEffect } from '@react-navigation/native';
+import useScroll from './hooks/useScroll';
 
 const HomeScreen = () => {
+    const prevScrollY = useRef(0);
     const { scrollY, scrollYGlobal, scrollToTop, flatlistRef } =
         useSharedState();
-    const prevScrollY = useRef(0);
+    const { onScroll } = useScroll(scrollY, scrollYGlobal, prevScrollY);
 
-    const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-        const currentScrollY = e.nativeEvent.contentOffset.y;
-        const isScrollingDown = currentScrollY > prevScrollY.current;
-        scrollY.value = withTiming(isScrollingDown ? 1 : 0, { duration: 300 });
-        scrollYGlobal.value = currentScrollY;
-        prevScrollY.current = currentScrollY;
+    const showBottomTab = () => {
+        setTimeout(() => {
+            scrollToTop();
+        }, 0);
     };
 
     useFocusEffect(
         useCallback(() => {
+            showBottomTab();
             return () => {
-                setTimeout(() => {
-                    scrollToTop();
-                }, 0);
+                showBottomTab();
             };
         }, []),
     );

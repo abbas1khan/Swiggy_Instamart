@@ -1,10 +1,10 @@
 import { View } from '@tamagui/core';
 import React from 'react';
-import Text from '../components/tamaguicore/Text';
-import ScreenWrapper from '../layout/ScreenWrapper';
-import Button from '../components/common/Button';
+import Text from '../../components/tamaguicore/Text';
+import ScreenWrapper from '../../layout/ScreenWrapper';
+import Button from '../../components/common/Button';
 import { Image } from 'react-native';
-import { BottomTabHeight } from '../constants/Constants';
+import { BottomTabHeight } from '../../constants/Constants';
 
 const ReorderScreen = () => {
     return (
@@ -17,7 +17,7 @@ const ReorderScreen = () => {
             >
                 <Image
                     resizeMode="contain"
-                    source={require('../assets/images/reorder.jpg')}
+                    source={require('../../assets/images/reorder.jpg')}
                     style={{
                         width: '100%',
                         height: 164,

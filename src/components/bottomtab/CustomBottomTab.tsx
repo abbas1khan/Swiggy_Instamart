@@ -1,8 +1,7 @@
-import { View } from '@tamagui/core';
 import React, { FC } from 'react';
 import Text from '../tamaguicore/Text';
-import { colors, screenWidth } from '../../utils/Theme';
-import { Pressable, TouchableOpacity } from 'react-native';
+import { screenWidth } from '../../utils/Theme';
+import { Pressable } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { useSharedState } from '../../context/SharedContext';
@@ -84,14 +83,17 @@ const CustomBottomTab: FC<BottomTabBarProps> = ({
                             testID={options.tabBarButtonTestID}
                             onPress={onPress}
                             onLongPress={onLongPress}
-                            style={{ flex: 1 }}
+                            style={{
+                                flex: 1,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
                         >
                             <Text
-                                style={{
-                                    color: isFocused
-                                        ? colors.primary
-                                        : colors.black,
-                                }}
+                                fontSize={12}
+                                fontFamily={'$bold'}
+                                color={isFocused ? '$primary' : '$grey4'}
+                                justifyContent="center"
                             >
                                 {label}
                             </Text>
