@@ -10,6 +10,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { StyleProvider } from './src/layout/tamagui/TamaguiProvider';
+import { SharedStateProvider } from './src/context/SharedContext';
 
 let persister = persistStore(store);
 
@@ -25,7 +26,9 @@ const App = () => {
                                 barStyle="dark-content"
                             />
                             <NavigationContainer>
-                                <MainAppNavigation />
+                                <SharedStateProvider>
+                                    <MainAppNavigation />
+                                </SharedStateProvider>
                             </NavigationContainer>
                         </SafeAreaProvider>
                     </PersistGate>
