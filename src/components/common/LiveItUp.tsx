@@ -39,6 +39,6 @@ const LiveItUp = () => {
     );
 };
 
-export default LiveItUp;
+export default React.memo(LiveItUp);
 
 const styles = StyleSheet.create({});
