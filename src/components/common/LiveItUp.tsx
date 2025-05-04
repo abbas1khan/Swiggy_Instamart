@@ -12,7 +12,7 @@ const LiveItUp = () => {
             backgroundColor={'$lightGrey'}
             paddingLeft={24}
             justifyContent="flex-end"
-            paddingBottom={60}
+            paddingBottom={80}
         >
             <Text
                 fontSize={76}

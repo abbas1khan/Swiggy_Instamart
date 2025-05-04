@@ -6,6 +6,7 @@ import { FlatList } from 'react-native';
 import { useSharedState } from '../../context/SharedContext';
 import { useFocusEffect } from '@react-navigation/native';
 import useScroll from './hooks/useScroll';
+import { useAppFocus } from '../../hooks/useAppFocus';
 
 const HomeScreen = () => {
     const prevScrollY = useRef(0);
@@ -18,6 +19,10 @@ const HomeScreen = () => {
             scrollToTop();
         }, 0);
     };
+
+    useAppFocus(() => {
+        showBottomTab();
+    });
 
     useFocusEffect(
         useCallback(() => {
