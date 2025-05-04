@@ -20,8 +20,8 @@ const CustomBottomTab: FC<BottomTabBarProps> = ({
                 {
                     translateY:
                         scrollY.value == 1
-                            ? withTiming(100, { duration: 300 })
-                            : withTiming(0, { duration: 300 }),
+                            ? withTiming(100, { duration: 600 })
+                            : withTiming(0, { duration: 600 }),
                 },
             ],
             position: 'absolute',
