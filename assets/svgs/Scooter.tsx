@@ -1,34 +1,19 @@
 import * as React from 'react';
 import Svg, { G, Path, Circle } from 'react-native-svg';
 
-const Scooters = ({ size = 24 }) => (
+const Scooter = ({ size = 24 }) => (
     <Svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
         width={size}
         height={size}
-        x={0}
-        y={0}
-        viewBox="0 0 48 48"
-        style={{
-            enableBackground: 'new 0 0 512 512',
-        }}
-        xmlSpace="preserve"
-        className=""
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 500 500"
     >
-        <G transform="matrix(1.26,0,0,1.26,-6.2400000000000055,-6.2400000000000055)">
+        <G transform="matrix(14.045455, 0, 0, 14.045455, -82.702081, -70.227273)">
             <Path
                 fill="#b1babe"
                 d="M24 11a.994.994 0 0 1-.515-.143l-4.05-2.43c-.466-.279-1-.427-1.543-.427H17V6h.892c.905 0 1.795.246 2.572.712L24 8.834l3.535-2.122A5 5 0 0 1 30.107 6H31v2h-.893c-.544 0-1.077.148-1.543.427l-4.05 2.43A.988.988 0 0 1 24 11z"
                 opacity={1}
                 data-original="#b0bec5"
-                className=""
-            />
-            <Path
-                fill="#37474f"
-                d="M26 35h-4v6a2 2 0 1 0 4 0z"
-                opacity={1}
-                data-original="#37474f"
                 className=""
             />
             <Path
@@ -39,18 +24,28 @@ const Scooters = ({ size = 24 }) => (
                 className=""
             />
             <Path
+                fill="#37474f"
+                d="M 27.189 31.075 L 20.812 31.075 L 20.812 38.202 C 20.812 40.031 23.47 41.173 25.595 40.259 C 26.582 39.835 27.189 39.05 27.189 38.202 L 27.189 31.075 Z"
+                opacity={1}
+                data-original="#37474f"
+                className=""
+                style={{}}
+            />
+            <Path
                 fill="#ef2d1e"
-                d="M26 37h-4a1 1 0 0 1-1-1v-6a3 3 0 1 1 6 0v6a1 1 0 0 1-1 1z"
+                d="M 26.919 31.975 L 21.082 32 C 20.277 32.003 19.623 31.68 19.623 31.278 L 19.623 26.91 C 19.623 25.228 23.271 24.163 26.189 24.991 C 27.542 25.376 28.377 26.093 28.377 26.874 L 28.377 31.241 C 28.377 31.643 27.724 31.972 26.919 31.975 Z"
                 opacity={1}
                 data-original="#f6695e"
                 className=""
+                style={{}}
             />
             <Path
                 fill="#ffffff"
-                d="M25 12h-2v12l1 2 1-2z"
+                d="M 25 12 L 23 12 L 23 18.65 L 24 19.759 L 25 18.65 L 25 12 Z"
                 opacity={1}
                 data-original="#ff9800"
                 className=""
+                style={{}}
             />
             <Path
                 fill="#beb3a7"
@@ -93,7 +88,16 @@ const Scooters = ({ size = 24 }) => (
                 data-original="#e3f2fd"
                 className=""
             />
+            <Circle
+                cx={24}
+                cy={23.781}
+                r={1.522}
+                fill="#e3f2fd"
+                opacity={1}
+                data-original="#e3f2fd"
+                className=""
+            />
         </G>
     </Svg>
 );
-export default Scooters;
+export default Scooter;
