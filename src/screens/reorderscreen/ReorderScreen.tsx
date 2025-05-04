@@ -17,7 +17,7 @@ const ReorderScreen = () => {
             >
                 <Image
                     resizeMode="contain"
-                    source={require('../../assets/images/reorder.jpg')}
+                    source={require('../../../assets/images/reorder.jpg')}
                     style={{
                         width: '100%',
                         height: 164,
